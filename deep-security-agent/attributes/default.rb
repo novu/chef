@@ -45,9 +45,5 @@ default['deep_security_agent']['token'] = nil
 #    'policy_name' setting.
 default['deep_security_agent']['policy_id'] = nil
 
-# The ID of the group you want to initialize the agent with
-default['deep_security_agent']['group_id'] = nil
-
-
 # Whether to force re-activation even Deep Security Agent has been activated
 default['deep_security_agent']['force_reactivation'] = false
