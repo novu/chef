@@ -108,7 +108,7 @@ module DSA_Helpers
 
     if certHash == nil || certHash == ''
       raise "Could not query Deep Security Agent certificate. Please make sure Deep Security Agent has been installed."
-    elsif !BOOTSTRAP_CERT.casecmp(certHash)
+    elsif BOOTSTRAP_CERT.casecmp(certHash) != 0
       activated = true
     else
       activated = false
