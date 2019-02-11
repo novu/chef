@@ -2,6 +2,12 @@
 
 Please refer to [GitHub Deep-Security-Agent cookbook releases](https://github.com/deep-security/chef/releases) for complete change log.
 
+## [1.1.3 - 2019-02-11]
+
+## FIXED
+
+- [SRE-10988] actually increment the retryCounter
+
 ## [1.1.2 - 2018-04-18]
 
 ## CHANGED
