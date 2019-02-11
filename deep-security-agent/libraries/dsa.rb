@@ -93,11 +93,13 @@ module DSA_Helpers
     certHashRetry = 0
     certHash = nil
     while (certHash == nil || certHash == '') && certHashRetry < 5 do
+      certHashRetry += 1
       rawAgentCertHash = `"#{dsa_query_command}" #{dsa_query_parameter}`
       begin
         certHash = "#{/^AgentStatus.agentCertHash: ([0-9A-F:]+)$/i.match(rawAgentCertHash)[1]}"
       rescue => exception
         Chef::Log.warn "#{exception.message}"
+        Chef::Log.warn "\"#{dsa_query_command} #{dsa_query_parameter}\" command returned: #{rawAgentCertHash}"
       end
 
       if certHash == nil || certHash == ''
