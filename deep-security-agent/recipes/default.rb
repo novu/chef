@@ -16,8 +16,14 @@ if node['ec2'] && node['ec2']['instance_type'] != 't2.small' && node['deep_secur
 end
 
 if node['deep_security_agent']['action'] == 'uninstall'
-  execute 'ds-agent uninstall' do
-    command 'sudo dpkg -r ds-agent'
-    only_if 'sudo dpkg -l ds-agent'
-  end
+  if node['platform'] == 'amazon'
+    execute 'ds-agent uninstall' do
+      command 'sudo rpm -ev ds_agent'
+      only_if 'sudo yum list installed |grep ds_agent'
+    end
+  if node['platform'] == 'ubuntu'
+    execute 'ds-agent uninstall' do
+      command 'sudo dpkg -r ds-agent'
+      only_if 'sudo dpkg -l ds-agent'
+    end
 end
