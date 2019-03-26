@@ -2,7 +2,7 @@
 
 Please refer to [GitHub Deep-Security-Agent cookbook releases](https://github.com/deep-security/chef/releases) for complete change log.
 
-## [1.1.4 - 2019-03-25]
+## [1.1.5 - 2019-03-25]
 
 ## Added
 
