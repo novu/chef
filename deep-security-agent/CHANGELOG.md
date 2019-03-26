@@ -2,6 +2,12 @@
 
 Please refer to [GitHub Deep-Security-Agent cookbook releases](https://github.com/deep-security/chef/releases) for complete change log.
 
+## [1.1.4 - 2019-03-25]
+
+## Added
+
+- [CT-2556] add logic to uninstall if needed.
+
 ## [1.1.3 - 2019-02-11]
 
 ## FIXED
